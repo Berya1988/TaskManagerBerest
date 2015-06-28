@@ -1,0 +1,2 @@
+"Jump"from[2015-08-26 in 00:00]to[2015-08-29 in 00:00]every[1 day]inActive;
+"Eat"from[2015-08-26 in 00:00]to[2015-09-26 in 00:00]every[12 hours]active.
