@@ -24,6 +24,7 @@ public class Task implements Serializable {
         this.title = title;
         this.time = time;
         repeated = false;
+        log.info("New unrepeated task was created!");
     }
 
     public Task(String title, Date start, Date end, int interval){   // конструює неактивну задачу, яка виконується у заданому проміжку часу (і початок і кінець включно) і з заданим інтервалом і має задану назву
@@ -32,6 +33,7 @@ public class Task implements Serializable {
         this.end = end;
         this.interval = interval;
         repeated = true;
+        log.info("New repeated task was created!");
     }
 
     public String getTitle() {
@@ -48,6 +50,10 @@ public class Task implements Serializable {
 
     public void setActive(boolean active) {
         this.active = active;
+        if(active)
+            log.info("Active mode was chosen as true");
+        else
+            log.info("Active mode was chosen as false");
     }
 
     public Date getTime(){                                        // якщо задача повторюється метод має повертати час початку повторення
@@ -143,6 +149,18 @@ public class Task implements Serializable {
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
         }
+    }
+    @Override
+    public String toString(){
+        String str = "";
+            if(this.isRepeated()) {
+                str += "Parameters for repeated task: start time:" + this.getStartTime() + ", end time:" + this.getEndTime() + ", interval:" + this.getRepeatInterval() + "\n";
+            }
+            else {
+                str += "Parameters for unrepeated task: start time:" + this.getStartTime() + "\n";
+            }
+            str += "Mode:" + this.isActive() + "\n";
+        return str;
     }
 }
 

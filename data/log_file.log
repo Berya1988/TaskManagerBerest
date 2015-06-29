@@ -1,9 +1,81 @@
-2015-06-26 10:18:13 INFO  MainClass:23 - Let's begin...
-2015-06-26 10:42:43 INFO  MainClass:23 - Let's begin...
-2015-06-26 11:09:36 INFO  MainClass:23 - Let's begin...
-2015-06-26 11:13:47 INFO  MainClass:23 - Let's begin...
-2015-06-26 11:14:18 INFO  MainClass:23 - Let's begin...
-2015-06-26 11:34:18 INFO  MainClass:76 - To be continued...
-2015-06-28 15:26:03 INFO  MainClass:23 - Let's begin...
-2015-06-28 15:28:59 INFO  MainClass:23 - Let's begin...
-2015-06-28 15:30:54 INFO  MainClass:23 - Let's begin...
+2015-06-29 08:37:06 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:37:36 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:38:29 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:38:36 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:39:37 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:39:42 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:40:38 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:40:42 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:41:52 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:41:56 INFO  Task:56 - Active mode was chosen as false
+2015-06-29 08:43:03 INFO  MainClass:23 - Let's begin...
+2015-06-29 08:44:11 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:44:51 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:44:57 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:47:10 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:48:35 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:48:56 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:48:57 INFO  Task:56 - Active mode was chosen as false
+2015-06-29 08:49:17 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:49:37 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:49:40 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:49:45 INFO  MainClass:206 - Task list was saved (temp.txt)
+2015-06-29 08:50:31 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:51:04 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:51:09 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:52:15 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:52:18 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:52:25 INFO  MainClass:206 - Task list was saved (temp.txt)
+2015-06-29 08:52:50 INFO  MainClass:23 - Program was launched...
+2015-06-29 08:53:05 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:53:05 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:53:05 INFO  Task:36 - New repeated task was created!
+2015-06-29 08:53:05 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:53:05 INFO  MainClass:201 - Task list was taken from the temp.txt file
+2015-06-29 08:54:47 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:54:51 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 08:55:28 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 08:55:31 INFO  Task:56 - Active mode was chosen as false
+2015-06-29 08:55:47 INFO  MainClass:206 - Task list was saved (temp.txt)
+2015-06-29 08:56:35 INFO  Task:118 - Task is active and repeated!
+2015-06-29 08:56:35 INFO  Task:118 - Task is active and repeated!
+2015-06-29 08:56:35 INFO  Task:131 - Task is active and unrepeated!
+2015-06-29 08:56:35 INFO  Task:140 - Task is not active!
+2015-06-29 09:05:05 INFO  MainClass:23 - Program was launched...
+2015-06-29 09:05:21 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:05:21 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:05:21 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:05:21 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:07:22 INFO  MainClass:23 - Program was launched...
+2015-06-29 09:07:48 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:07:48 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:07:48 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:07:48 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:08:38 INFO  MainClass:23 - Program was launched...
+2015-06-29 09:08:49 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:08:49 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:08:49 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:08:49 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:08:49 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 09:08:49 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:08:49 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 09:08:49 INFO  Task:56 - Active mode was chosen as false
+2015-06-29 09:08:49 INFO  MainClass:202 - Task list was taken from the temp.txt file
+2015-06-29 09:09:37 INFO  Task:118 - Task is active and repeated!
+2015-06-29 09:09:37 INFO  Task:118 - Task is active and repeated!
+2015-06-29 09:09:38 INFO  Task:131 - Task is active and unrepeated!
+2015-06-29 09:09:38 INFO  Task:140 - Task is not active!
+2015-06-29 09:11:15 INFO  MainClass:23 - Program was launched...
+2015-06-29 09:11:34 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:11:34 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:11:34 INFO  Task:36 - New repeated task was created!
+2015-06-29 09:11:34 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:11:34 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 09:11:34 INFO  Task:54 - Active mode was chosen as true
+2015-06-29 09:11:34 INFO  Task:27 - New unrepeated task was created!
+2015-06-29 09:11:34 INFO  Task:56 - Active mode was chosen as false
+2015-06-29 09:11:34 INFO  MainClass:202 - Task list was taken from the temp.txt file
+2015-06-29 09:13:28 INFO  Task:118 - Task is active and repeated!
+2015-06-29 09:13:28 INFO  Task:118 - Task is active and repeated!
+2015-06-29 09:13:28 INFO  Task:131 - Task is active and unrepeated!
+2015-06-29 09:13:28 INFO  Task:140 - Task is not active!

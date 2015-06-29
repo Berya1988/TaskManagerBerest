@@ -47,9 +47,10 @@ public class Tasks {
 
     synchronized public static void checkList(Iterable<Task> tasks){
         Date currentDate = new Date();
-        for (Task task : tasks) {
-            if(task.getStartTime().compareTo(currentDate) == 0)//>0
-                System.out.println("You have new task for today! Check your task list!");
-        }
+        if(tasks != null)
+            for (Task task : tasks) {
+                if(task.nextTimeAfter(currentDate).compareTo(currentDate)==0)
+                    System.out.println("You have new task for today! Check your task list!");
+            }
     }
 }

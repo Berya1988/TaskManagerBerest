@@ -1,2 +1,4 @@
-"Jump"from[2015-08-26 in 00:00]to[2015-08-29 in 00:00]every[1 day]inActive;
-"Eat"from[2015-08-26 in 00:00]to[2015-09-26 in 00:00]every[12 hours]active.
+"jumping"from[2015-06-20 in 00:00]to[2015-06-30 in 00:00]every[1 day]active;
+"running"from[2015-06-01 in 00:00]to[2015-08-01 in 00:00]every[12 days]active;
+"DaugtersBirthday"at[2015-06-27 in 00:00]active;
+"HouseCleaning"at[2015-06-30 in 00:00]inActive.

@@ -20,13 +20,13 @@ public class MainClass {
     private static final Logger log = Logger.getLogger(view.MainClass.class);
 
     public static void main(String[] args) throws IOException, ParseException {
-        log.info("Let's begin...");
+        log.info("Program was launched...");
         TaskList test = new LinkedTaskList();
         Thread newThread = new Thread(new CheckTasks(test));
         handleVariant(menu(), test);
         newThread.start();
         reader.close();
-        log.info("To be continued...1");
+        log.info("Application has been closed ");
     }
     public static int menu()throws IOException{
         System.out.println("Choose activity (enter necessary number):");
@@ -104,7 +104,7 @@ public class MainClass {
                 task = new Task(title, start, end, interval);
             }
             catch (ParseException e){
-                e.printStackTrace();
+                log.error("Threw a ParseException in MainClass::", e);
             }
         } else {
             System.out.println("Enter start time of unrepeated task (yyyy-MM-dd)");
@@ -114,31 +114,20 @@ public class MainClass {
                 task = new Task(title, time);
             }
             catch (ParseException e){
-                e.printStackTrace();
+                log.error("Threw a ParseException in MainClass::", e);
             }
         }
         System.out.println("Activate?(true/false)");
         boolean active = Boolean.parseBoolean(reader.readLine());;
         task.setActive(active);
         list.add(task);
-        /*Task t1 = new Task("Morning running", 100, 200, 20);
-        t1.setActive(true);
-        Task t2 = new Task("Work", 10, 500, 20);
-        t2.setActive(true);
-        Task t3 = new Task("Forest camping", 290);
-        t3.setActive(true);
-        Task t4 = new Task("Sunbathing", 250, 400, 100);
-        t4.setActive(true);
-        list.add(t1);
-        list.add(t2);
-        list.add(t3);
-        list.add(t4);*/
     }
     public static void removeTask(TaskList list) throws IOException {
         System.out.println("Choose task from the list...");
         System.out.println("Enter number of a task to delete");
         int number = Integer.parseInt(reader.readLine());
         list.remove(list.getTask(number));
+        log.info("Task was successfully removed");
     }
     public static void editTask(TaskList list) throws IOException, ParseException {
         System.out.println("Please, choose necessary parameters...");
@@ -166,7 +155,7 @@ public class MainClass {
                         list.getTask(number).setTime(start, end, interval);
                     }
                     catch (ParseException e){
-                        e.printStackTrace();
+                        log.error("Threw a ParseException in MainClass::", e);
                     }
                 } else {
                     System.out.println("Enter new start time:");
@@ -176,9 +165,8 @@ public class MainClass {
                         list.getTask(number).setTime(time);
                     }
                     catch (ParseException e){
-                        e.printStackTrace();
+                        log.error("Threw a ParseException in MainClass::", e);
                     }
-
                 }
                 break;
             case 3:
@@ -199,21 +187,24 @@ public class MainClass {
         try {
             Date start = formatter.parse(startS);
             Date end = formatter.parse(endS);
+            System.out.println("For this period you have next task list:");
             for (Task t:Tasks.incoming(list, start, end)){
-                System.out.println(t.getTitle());
+                System.out.println(t.toString());
             }
         }
         catch (ParseException e){
-            e.printStackTrace();
+            log.error("Threw a ParseException in MainClass::", e);
         }
     }
 
     public static void downloadList(TaskList list) throws IOException, ParseException {
-        TaskIO.readText(list, new File("e:\\temp\\workspace\\TaskManagerBerest\\data\\temp.txt"));
+        TaskIO.readText(list, new File("data//temp.txt"));
+        log.info("Task list was taken from the temp.txt file");
     }
 
     public static void saveList(TaskList list) throws IOException {
-        TaskIO.writeText(list, new File("e:\\temp\\workspace\\TaskManagerBerest\\data\\temp.txt"));
+        TaskIO.writeText(list, new File("data//temp.txt"));
+        log.info("Task list was saved (temp.txt)");
     }
 
 }

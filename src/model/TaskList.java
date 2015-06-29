@@ -29,17 +29,17 @@ public abstract class TaskList implements Iterable<Task>, Serializable {
     @Override
     public String toString(){
         String str = "";
-        str += "Size of the list is " + size() + "/n";
+        str += "Size of the list is " + size() + "\n";
         for (int i = 0; i < size(); i++) {
-            str += "Task #" + i + " is " + getTask(i).getTitle() + "/n";
+            str += "Task #" + i + " is " + getTask(i).getTitle() + "\n";
             if(getTask(i).isRepeated()) {
-                str += "Parameters for repeated task: start time:" + getTask(i).getStartTime() + ", end time:" + getTask(i).getEndTime() + ", interval:" + getTask(i).getRepeatInterval() + "/n";
+                str += "Parameters for repeated task: start time:" + getTask(i).getStartTime() + ", end time:" + getTask(i).getEndTime() + ", interval:" + getTask(i).getRepeatInterval() + "\n";
             }
             else {
-                str += "Parameters for unrepeated task: start time:" + getTask(i).getStartTime() + "/n";
+                str += "Parameters for unrepeated task: start time:" + getTask(i).getStartTime() + "\n";
             }
-            str += "Mode:" + getTask(i).isActive() + "/n";
-            str += " - *** - " + "/n";;
+            str += "Mode:" + getTask(i).isActive() + "\n";
+            str += " - *** - " + "\n";;
         }
         return str;
     }
