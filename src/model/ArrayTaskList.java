@@ -7,29 +7,29 @@ import java.util.Iterator;
  */
 public class ArrayTaskList extends TaskList {
     private int size;
-    private Task[] array;
+    private Task[] tasks = new Task[10];
 
     public ArrayTaskList() {
         size = 0;
-        array = new Task[10];
+
     }
 
     public void add(Task task) {                // метод, що додає до списку вказану задачу.
         if(task == null)
             throw new IllegalArgumentException("task = null");
-        if (size == array.length){
+        if (size == tasks.length){
             Task[] newArray = new Task[size+10];
-            System.arraycopy(array, 0, newArray, 0, size);
-            array = newArray;
+            System.arraycopy(tasks, 0, newArray, 0, size);
+            tasks = newArray;
         }
-        array[size] = task;
-        size++;
+        tasks[size++] = task;
+
     }
 
     public boolean remove(Task task) {          // метод, що видаляє задачу із списку і повертає істину, якщо така задача була у списку. Якщо у списку було декілька таких задач, необхідно видалити одну будь-яку.
         for (int i = 0; i < size; i++) {
-            if(array[i].equals(task)){
-                System.arraycopy(array, i+1, array, i, size-i-1);
+            if(tasks[i].equals(task)){
+                System.arraycopy(tasks, i+1, tasks, i, size-i-1);
                 size--;
                 return true;
             }
@@ -42,21 +42,25 @@ public class ArrayTaskList extends TaskList {
     }
 
     public Task getTask(int index) {            // метод, що повертає задачу, яка знаходиться на вказаному місці у списку, перша задача має індекс 0.
-        return array[index];
+        return tasks[index];
     }
 
     @Override
     public Iterator<Task> iterator() {
         return new Iterator<Task>() {
+
             private int iteratorIndex = 0;
+
             @Override
             public boolean hasNext() {
                 return iteratorIndex < size();
             }
+
             @Override
             public Task next() {
-                return array[iteratorIndex++];
+                return tasks[iteratorIndex++];
             }
+
             @Override
             public void remove() {
                 throw new UnsupportedOperationException();
