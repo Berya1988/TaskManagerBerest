@@ -1,2 +1,2 @@
-java -cp target TaskManagerBerest.view.MainClass
+java -cp target TaskManagerBerest.model.MainClass
 pause

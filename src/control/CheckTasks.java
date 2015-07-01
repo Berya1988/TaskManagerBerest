@@ -8,7 +8,7 @@ import org.apache.log4j.*;
  */
 public class CheckTasks implements Runnable {
     public LinkedTaskList list;
-    private static final Logger log = Logger.getLogger(view.MainClass.class);
+    private static final Logger log = Logger.getLogger(MainClass.class);
 
     public CheckTasks(TaskList list) {
      this.list = (LinkedTaskList)list;
