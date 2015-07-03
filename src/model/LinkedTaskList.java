@@ -5,14 +5,9 @@ import java.util.Iterator;
 /**
  * Created by Oleg on 16.06.2015.
  */
-public class LinkedTaskList extends TaskList {
+public class LinkedTaskList extends TaskList implements Cloneable {
     private int size;
-    Node head;
-
-    public LinkedTaskList() {
-        head = null;
-        size = 0;
-    }
+    private Node head = null;
 
     private class Node {
         private Task data;
@@ -43,10 +38,13 @@ public class LinkedTaskList extends TaskList {
     }
 
     public boolean remove(Task task) {          // метод, що видал€Ї задачу ≥з списку ≥ повертаЇ ≥стину, €кщо така задача була у списку. якщо у списку було дек≥лька таких задач, необх≥дно видалити одну будь-€ку.
+        if(task == null)
+            throw new IllegalArgumentException("task = null");
+
         if(head == null)
             throw new RuntimeException("cannot delete");
 
-        if(head.data.equals(task)) {
+        if(task.equals(head.data)) {
             head = head.next;
             size--;
             return true;
@@ -121,5 +119,18 @@ public class LinkedTaskList extends TaskList {
         }
 
         return false;
+    }
+
+    @Override
+    public Object clone() {
+        try{
+            LinkedTaskList copy = (LinkedTaskList)super.clone();
+            copy.size = this.size;
+            copy.head = this.head;
+            return copy;
+        }
+        catch(CloneNotSupportedException e){
+            throw new AssertionError("Impossible");
+        }
     }
 }

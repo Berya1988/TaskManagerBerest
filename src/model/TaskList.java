@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Created by Oleg on 16.06.2015.
@@ -61,9 +62,9 @@ public abstract class TaskList implements Iterable<Task>, Serializable {
         if (obj == this)
             return true;
         if (obj.getClass() == this.getClass()) {
-            TaskList TL = (TaskList) obj;
+            TaskList taskList = (TaskList) obj;
             for (int i = 0; i < this.size(); i++) {
-                if (!this.getTask(i).equals(TL.getTask(i))){
+                if (!this.getTask(i).equals(taskList.getTask(i))){
                     return false;
                 }
             }

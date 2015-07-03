@@ -1,5 +1,6 @@
 package model;
 
+import java.lang.reflect.Array;
 import java.util.Iterator;
 
 /**
@@ -14,7 +15,7 @@ public class ArrayTaskList extends TaskList {
 
     }
 
-    public void add(Task task) {                // метод, що додає до списку вказану задачу.
+    public void add(Task task) {
         if(task == null)
             throw new IllegalArgumentException("task = null");
         if (size == tasks.length){
@@ -26,7 +27,7 @@ public class ArrayTaskList extends TaskList {
 
     }
 
-    public boolean remove(Task task) {          // метод, що видаляє задачу із списку і повертає істину, якщо така задача була у списку. Якщо у списку було декілька таких задач, необхідно видалити одну будь-яку.
+    public boolean remove(Task task) {
         for (int i = 0; i < size; i++) {
             if(tasks[i].equals(task)){
                 System.arraycopy(tasks, i+1, tasks, i, size-i-1);
@@ -37,11 +38,11 @@ public class ArrayTaskList extends TaskList {
         return false;
     }
 
-    public int size() {                         // метод, що повертає кількість задач у списку.
+    public int size() {
         return size;
     }
 
-    public Task getTask(int index) {            // метод, що повертає задачу, яка знаходиться на вказаному місці у списку, перша задача має індекс 0.
+    public Task getTask(int index) {            // пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 0.
         return tasks[index];
     }
 
@@ -63,8 +64,23 @@ public class ArrayTaskList extends TaskList {
 
             @Override
             public void remove() {
-                throw new UnsupportedOperationException();
+                if(iteratorIndex < size()-1){
+                    System.arraycopy(tasks, iteratorIndex + 1, tasks, iteratorIndex, size - iteratorIndex - 1);
+                }
+                size--;
             }
         };
+    }
+    @Override
+    public Object clone() {
+        try{
+            ArrayTaskList copy = (ArrayTaskList)super.clone();
+            copy.size = this.size;
+            copy.tasks = this.tasks.clone();
+            return copy;
+        }
+        catch(CloneNotSupportedException e){
+            throw new AssertionError("Impossible");
+        }
     }
 }
