@@ -25,6 +25,7 @@ public class Task implements Serializable {
         this.time = time;
         repeated = false;
         log.info("New unrepeated task was created!");
+        log.info(this.toString());
     }
 
     public Task(String title, Date start, Date end, int interval){   // конструює неактивну задачу, яка виконується у заданому проміжку часу (і початок і кінець включно) і з заданим інтервалом і має задану назву
@@ -34,6 +35,7 @@ public class Task implements Serializable {
         this.interval = interval;
         repeated = true;
         log.info("New repeated task was created!");
+        log.info(this.toString());
     }
 
     public String getTitle() {
@@ -152,7 +154,7 @@ public class Task implements Serializable {
     }
     @Override
     public String toString(){
-        String str = "";
+        String str = "Task title: " + this.getTitle() + "\n";
             if(this.isRepeated()) {
                 str += "Parameters for repeated task: start time:" + this.getStartTime() + ", end time:" + this.getEndTime() + ", interval:" + this.getRepeatInterval() + "\n";
             }

@@ -12,25 +12,9 @@ public abstract class TaskList implements Iterable<Task>, Serializable {
     public abstract Task getTask(int index);
     public abstract int size();
 
-    public void show(){
-        System.out.println("Size of the list is " + size());
-        for (int i = 0; i < size(); i++) {
-            System.out.println("Task #" + i + " is " + getTask(i).getTitle());
-            if(getTask(i).isRepeated()) {
-                System.out.println("Parameters for repeatet task: start time:" + getTask(i).getStartTime() + ", end time:" + getTask(i).getEndTime() + ", interval:" + getTask(i).getRepeatInterval());
-            }
-            else {
-                System.out.println("Parameters for unrepeatet task: start time:" + getTask(i).getStartTime());
-            }
-            System.out.println("Mode:" + getTask(i).isActive());
-            System.out.println(" - *** - ");
-        }
-    }
-
     @Override
     public String toString(){
-        String str = "";
-        str += "Size of the list is " + size() + "\n";
+        String str = "Size of the list is " + size() + "\n";
         for (int i = 0; i < size(); i++) {
             str += "Task #" + i + " is " + getTask(i).getTitle() + "\n";
             if(getTask(i).isRepeated()) {

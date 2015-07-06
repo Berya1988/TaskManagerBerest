@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Created by Oleg on 13.06.2015.
  */
-public class ArrayTaskList extends TaskList {
+public class ArrayTaskList extends TaskList implements Cloneable {
     private int size;
     private Task[] tasks = new Task[10];
 
@@ -64,7 +64,7 @@ public class ArrayTaskList extends TaskList {
 
             @Override
             public void remove() {
-                if(iteratorIndex < size()-1){
+                if(iteratorIndex < size - 1){
                     System.arraycopy(tasks, iteratorIndex + 1, tasks, iteratorIndex, size - iteratorIndex - 1);
                 }
                 size--;

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Oleg on 16.06.2015.
@@ -94,14 +95,28 @@ public class LinkedTaskList extends TaskList implements Cloneable {
     public Iterator iterator(){
         return new Iterator(){
             private int iteratorIndex = 0;
+            private Node nextElement = head;
+            private Node lastReturned = null;
             public boolean hasNext(){
-                return iteratorIndex < size();
+                return iteratorIndex < size;
             }
             public Object next(){
-                return getTask(iteratorIndex++);
+                if (!hasNext())
+                    throw new NoSuchElementException();
+                lastReturned = nextElement;
+                nextElement = nextElement.next;
+                iteratorIndex++;
+                return lastReturned.data;
             }
             public void remove(){
-                throw new UnsupportedOperationException();
+                if(lastReturned.next != null) {
+                    nextElement = nextElement.next;
+                    lastReturned.next = nextElement;
+                }
+                else{
+                    nextElement = null;
+                }
+                size--;
             }
         };
     }
@@ -117,7 +132,6 @@ public class LinkedTaskList extends TaskList implements Cloneable {
             LinkedTaskList another = (LinkedTaskList) obj;
             return head.data.getTitle().equals(another.head.data.getTitle());
         }
-
         return false;
     }
 
